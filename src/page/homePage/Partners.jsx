@@ -10,7 +10,7 @@ const Partners = () => {
         slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 3000,
         arrows: false,
         responsive: [
             {
@@ -44,8 +44,8 @@ const Partners = () => {
     ];
 
     return (
-        <div className="p-6 inset-0 bg-black/70 max-w-screen-lg mx-auto rounded-md ">
-            <h2 className="text-center text-white text-xl md:text-4xl font-bold mb-6">
+        <div className="p-6 inset-0 bg-black/70 xl:max-w-screen-lg mx-auto rounded-md ">
+            <h2 className="text-center text-white text-lg md:text-4xl font-bold mb-6">
                 Our <span className="text-[#F36B27]">30+</span>  Trusted Partners and Collaborators
             </h2>
             <Slider {...settings}>
