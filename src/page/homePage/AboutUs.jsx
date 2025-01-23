@@ -3,7 +3,7 @@ import { FaUserFriends } from "react-icons/fa";
 
 const AboutUs = () => {
     return (
-        <div className="bg-white py-16 px-6 md:px-12">
+        <div className="bg-white pt-16 px-6 md:px-12">
             <div className="max-w-screen-xl mx-auto grid lg:grid-cols-2 items-center gap-10">
                 {/* Left Side: Image */}
                 <div className="relative">

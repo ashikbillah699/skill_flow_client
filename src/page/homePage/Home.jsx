@@ -4,6 +4,7 @@ import CountUCS from "./CountUCS";
 import Feedback from "./Feedback";
 import InspirTeachers from "./InspirTeachers";
 import Partners from "./Partners";
+import StudyAids from "./StudyAids";
 
 
 const Home = () => {
@@ -15,11 +16,11 @@ const Home = () => {
                     <Partners></Partners>
                 </div>
             </div>
+            <AboutUs></AboutUs>
             <CountUCS></CountUCS>
             <InspirTeachers></InspirTeachers>
             <Feedback></Feedback>
-            <AboutUs></AboutUs>
-
+            <StudyAids></StudyAids>
         </div>
     );
 };
