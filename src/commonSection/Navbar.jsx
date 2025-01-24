@@ -1,8 +1,13 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import skill_flow_logo from '../assets/SkillFolw_logo.png'
 import './navbar.css'
+import { useContext } from 'react';
+import { AuthContext } from '../provider/AuthProvider';
 
 const Navbar = () => {
+    const { user,logOut } = useContext(AuthContext);
+    console.log(user);
+
     const links = <>
         <NavLink className='mx-3 hover:text-[#F36B27] duration-700 text-white' to='/'>HOME</NavLink>
         <NavLink className='mx-3 hover:text-[#F36B27] duration-700 text-white' to='/'>ALL CLASSES</NavLink>
@@ -45,25 +50,28 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="px-3 py-2 rounded-lg bg-gray-800 text-white hover:bg-[#F36B27] duration-700">Sign In</a>
-                {/* profile */}
-                <div className="dropdown dropdown-end">
-                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            <img
-                                alt="Tailwind CSS Navbar component"
-                                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                {user && user ? <>
+                    <div className="dropdown dropdown-end">
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img
+                                    alt="Tailwind CSS Navbar component"
+                                    src={user && user?.photoURL} />
+                            </div>
                         </div>
+                        <ul
+                            tabIndex={0}
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            <li><a>{user && user?.displayName}</a></li>
+                            <li><a> Deshboard</a></li>
+                            <li><a onClick={logOut}>Logout</a></li>
+                        </ul>
                     </div>
-                    <ul
-                        tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                </>
+                    : <Link to='/login' className="px-3 py-2 rounded-lg bg-gray-800 text-white hover:bg-[#F36B27] duration-700">Sign In</Link>
+                }
+                {/* profile */}
 
-                        <li><a> Name</a></li>
-                        <li><a> Deshboard</a></li>
-                        <li><a>Logout</a></li>
-                    </ul>
-                </div>
             </div>
         </div>
     );
