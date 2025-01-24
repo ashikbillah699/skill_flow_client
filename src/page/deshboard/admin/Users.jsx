@@ -4,20 +4,27 @@ import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import DeshboardBanner from "../../../commonSection/DeshboardBanner";
 import usersBanner from '../../../assets/usersbanner.jpg'
 import Swal from 'sweetalert2'
+import { useState } from "react";
 
 
 const Users = () => {
     const axiosSecure = useAxiosPublic();
+    const [search, setSearch] = useState('')
 
-    const { data: users = [] } = useQuery({
+    const handleSearch = () => {
+        refetch()
+    }
+    
+
+    const { data: users = [], refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/users`)
+            const res = await axiosSecure.get(`/users?search=${search}`)
             return res.data;
         }
     })
 
-    const handleMakeAdmin =  (id) => {
+    const handleMakeAdmin = (id) => {
         Swal.fire({
             title: "Are you sure?",
             text: "Do you want to make him an admin!",
@@ -26,16 +33,16 @@ const Users = () => {
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, I'm sure."
-        }).then(async(result) => {
+        }).then(async (result) => {
             if (result.isConfirmed) {
                 await axiosSecure.patch(`/users/admin/${id}`)
                     .then(res => {
-                        console.log(res.data)
+                        refetch()
                         if (res.data.modifiedCount > 0) {
                             Swal.fire({
                                 title: "Admin!",
                                 text: "Admin has been created.",
-                                icon: "success" ,
+                                icon: "success",
                                 showConfirmButton: false,
                                 timer: 1800
                             });
@@ -43,13 +50,22 @@ const Users = () => {
                     })
             }
         });
-
     }
 
     return (
         <div>
             <DeshboardBanner img={usersBanner} title={'User Management'}></DeshboardBanner>
             <div className="overflow-x-auto p-6 bg-gray-100 min-h-screen">
+                <div className="flex items-center gap-2 mb-4">
+                    <input
+                        type='search'
+                        placeholder="Search by name or email"
+                        className="input input-bordered w-full"
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                    />
+                    <button className="btn btn-outline" onClick={handleSearch}>Search</button>
+                </div>
                 <table className="table w-full border">
                     <thead className="bg-gray-800 text-white">
                         <tr>

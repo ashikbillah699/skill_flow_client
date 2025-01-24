@@ -23,7 +23,8 @@ const SignUp = () => {
                     const userInfo = {
                         name: data?.displayName,
                         email: data?.email,
-                        photoURL:data?.photoURL
+                        photoURL:data?.photoURL,
+                        role: 'student'
                     }
                     console.log(userInfo)
                     const res = await axiosPublic.post('/user', userInfo)
@@ -55,7 +56,8 @@ const SignUp = () => {
                     const userInfo = {
                         name: result.user?.displayName,
                         email: result.user?.email,
-                        photoURL: result.user?.photoURL
+                        photoURL: result.user?.photoURL,
+                        role: 'student'
                     }
 
                     const res = await axiosPublic.post('/user', userInfo)
