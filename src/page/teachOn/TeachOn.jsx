@@ -3,21 +3,44 @@ import BgCover from "../../commonSection/BgCover";
 import teachOnBg from '../../assets/teachOn2.jpg'
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import Swal from 'sweetalert2';
+import toast from "react-hot-toast";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 
 const TeachOn = () => {
     const { user } = useContext(AuthContext)
+    const axiosSecure = useAxiosSecure()
 
-    const handleSubmit = e => {
-       e.preventDefault();
-       const email = user?.email;
-       const teacherName = e.target.teacherName.value;
-       const photoUrl = e.target.photoUrl.value;
-       const title = e.target.title.value;
-       const category = e.target.category.value;
-       const experience = e.target.experience.value;
-       const teachOnData = {email, teacherName, photoUrl, title, category, experience, status: 'pending'};
-       console.table(teachOnData);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const email = user?.email;
+        const teacherName = e.target.teacherName.value;
+        const photoUrl = e.target.photoUrl.value;
+        const title = e.target.title.value;
+        const category = e.target.category.value;
+        const experience = e.target.experience.value;
+        const teachOnData = { email, teacherName, photoUrl, title, category, experience, status: 'pending' };
+        console.table(teachOnData);
+        try {
+            await axiosSecure.post(`/teachOn`, teachOnData)
+            .then(res =>{
+                console.log(res.data)
+                if(res.data.insertedId){
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Your request has been received successfully, please wait for approval.",
+                        showConfirmButton: false,
+                        timer: 1800
+                      });
+                }
+            })
+        }
+        catch (error) {
+            console.log("Error occurred:", error.message);
+            toast.error(error.message)
+        }
     }
     return (
         <div>

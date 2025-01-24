@@ -1,6 +1,8 @@
 import countUCS from '../../assets/countImg.jpg'
 import CommonHead from '../../commonSection/CommonHead';
+import useTeachOn from '../../hooks/useTeachOn';
 const CountUCS = () => {
+    const [teachOn] = useTeachOn()
     const stats = [
         {
             id: 1,
@@ -26,6 +28,7 @@ const CountUCS = () => {
     ];
     return (
         <div className="max-w-screen-xl mx-auto py-16 md:px-12 ">
+            {teachOn.length}
             <CommonHead heading={'Our Progress'}></CommonHead>
             <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                

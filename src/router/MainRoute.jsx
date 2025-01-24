@@ -8,6 +8,11 @@ import AllClasses from "../page/allClasses/AllClasses";
 import ClassDetails from "../page/allClasses/ClassDetails";
 import TeachOn from "../page/teachOn/TeachOn";
 import PrivetRoute from "./PrivetRoute";
+import DeshboardLayout from "../layout/DeshboardLayout";
+import TeacherRequest from "../page/deshboard/admin/TeacherRequest";
+import Users from "../page/deshboard/admin/Users";
+import ReqAllClasses from "../page/deshboard/admin/ReqAllClasses";
+import Profile from "../commonSection/Profile";
 
 const router = createBrowserRouter([
     {
@@ -37,6 +42,28 @@ const router = createBrowserRouter([
             {
                 path: '/signUp',
                 element: <SignUp></SignUp>
+            }
+        ]
+    },
+    {
+        path: '/deshboard',
+        element: <DeshboardLayout></DeshboardLayout>,
+        children:[
+            {
+                path:'/deshboard/teacherRequest',
+                element: <TeacherRequest></TeacherRequest>
+            },
+            {
+                path:'/deshboard/users',
+                element: <Users></Users>
+            },
+            {
+                path:'/deshboard/reqAllClasses',
+                element: <ReqAllClasses></ReqAllClasses>
+            },
+            {
+                path: '/deshboard/profile',
+                element: <Profile></Profile>
             }
         ]
     }
