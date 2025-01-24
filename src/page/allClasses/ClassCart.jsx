@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { FaUserGraduate } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 
 const ClassCart = ({ classItem }) => {
@@ -28,7 +29,7 @@ const ClassCart = ({ classItem }) => {
                 <p className="text-sm text-gray-500">{classItem.description}</p>
 
                 <div className="flex justify-between items-center">
-                    <button className="btn-sm mt-2 gap-3 flex justify-between items-center">Enroll Now<FaArrowRightLong /></button>
+                    <Link to={`/classDetails/${classItem.id}`}><button className="btn-sm mt-2 gap-3 flex justify-between items-center">Enroll Now<FaArrowRightLong /></button></Link>
                     <p className="text-lg font-bold text-[#F36B27]">{classItem.price}</p>
                 </div>
 

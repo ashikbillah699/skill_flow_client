@@ -5,6 +5,9 @@ import Home from "../page/homePage/Home";
 import Login from "../page/Login";
 import SignUp from "../page/SignUp";
 import AllClasses from "../page/allClasses/AllClasses";
+import ClassDetails from "../page/allClasses/ClassDetails";
+import TeachOn from "../page/teachOn/TeachOn";
+import PrivetRoute from "./PrivetRoute";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +21,14 @@ const router = createBrowserRouter([
             {
                 path: '/allClasses',
                 element: <AllClasses></AllClasses>
+            },
+            {
+                path: '/classDetails/:id',
+                element: <ClassDetails></ClassDetails>
+            },
+            {
+                path: '/teachOn',
+                element: <PrivetRoute><TeachOn></TeachOn></PrivetRoute>
             },
             {
                 path:'/login',

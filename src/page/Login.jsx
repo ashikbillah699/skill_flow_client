@@ -1,7 +1,7 @@
 import { FaFacebookF, FaGithub, FaGoogle } from "react-icons/fa";
 import loginImg from '../assets/authentication2 1.png'
 import loginBg from '../assets/Rectangle 75.png'
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import toast from "react-hot-toast";
@@ -9,6 +9,8 @@ import { Helmet } from "react-helmet";
 
 const Login = () => {
     const {createLogin,googleSignUp, userProfile} = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate();
 
 
     const handleSubmit = e => {
@@ -49,7 +51,7 @@ const Login = () => {
                     // const res = await axiosPublic.post('/user', userInfo)
                     // console.log(res.data)
                     // toast.success('successfully sign up')
-                    // navigate('/')
+                    navigate(location.state?.from?.pathname || "/")
                 })
                 .catch(err => {
                     console.log(err.message)
