@@ -10,7 +10,7 @@ const Navbar = () => {
 
     const links = <>
         <NavLink className='mx-3 hover:text-[#F36B27] duration-700 text-white' to='/'>HOME</NavLink>
-        <NavLink className='mx-3 hover:text-[#F36B27] duration-700 text-white' to='/'>ALL CLASSES</NavLink>
+        <NavLink className='mx-3 hover:text-[#F36B27] duration-700 text-white' to='/allClasses'>ALL CLASSES</NavLink>
         <NavLink className='mx-3 hover:text-[#F36B27] duration-700 text-white' to='/'>TEACH ON SKILLFLOW</NavLink>
     </>
 

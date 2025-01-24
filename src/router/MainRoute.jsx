@@ -4,6 +4,7 @@ import MaignLayout from "../layout/MaignLayout";
 import Home from "../page/homePage/Home";
 import Login from "../page/Login";
 import SignUp from "../page/SignUp";
+import AllClasses from "../page/allClasses/AllClasses";
 
 const router = createBrowserRouter([
     {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element:<Home></Home>
+            },
+            {
+                path: '/allClasses',
+                element: <AllClasses></AllClasses>
             },
             {
                 path:'/login',

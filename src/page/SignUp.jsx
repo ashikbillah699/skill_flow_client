@@ -6,10 +6,11 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const SignUp = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const { createSignUp, userProfile,googleSignUp } = useContext(AuthContext)
+    const { createSignUp, userProfile, googleSignUp } = useContext(AuthContext)
 
     const onSubmit = (data) => {
         try {
@@ -24,7 +25,7 @@ const SignUp = () => {
                     // console.log(userInfo)
                     // const res = await axiosPublic.post('/user', userInfo)
                     // if (res.data.insertedId) {
-                        toast.success('successfully sign up')
+                    toast.success('successfully sign up')
                     //     reset()
                     //     navigate('/')
                     // }
@@ -68,6 +69,9 @@ const SignUp = () => {
 
     return (
         <div className="flex justify-center items-center min-h-screen p-4" style={{ backgroundImage: `url(${loginBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <Helmet>
+                <title>SkillFlow | SignUP</title>
+            </Helmet>
             <div className="flex shadow-2xl rounded-lg w-full max-w-4xl overflow-hidden" style={{ backgroundImage: `url(${loginBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 {/*Left Side - Form */}
                 <div className="w-full md:w-1/2 p-8">

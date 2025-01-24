@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
     const {createLogin,googleSignUp, userProfile} = useContext(AuthContext)
@@ -62,6 +63,9 @@ const Login = () => {
 
     return (
         <div className="flex justify-center items-center min-h-screen p-4" style={{ backgroundImage: `url(${loginBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <Helmet>
+                <title>SkillFlow | Sign In</title>
+            </Helmet>
             <div className="flex shadow-2xl rounded-lg w-full max-w-4xl overflow-hidden" style={{ backgroundImage: `url(${loginBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 {/* Left Side - Image */}
                 <div className="hidden md:flex md:w-1/2 justify-center items-center" >
