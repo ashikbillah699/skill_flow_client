@@ -3,6 +3,7 @@ import { FaUser, FaUserShield } from "react-icons/fa6";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import DeshboardBanner from "../../../commonSection/DeshboardBanner";
 import usersBanner from '../../../assets/usersbanner.jpg'
+import Swal from 'sweetalert2'
 
 
 const Users = () => {
@@ -14,9 +15,37 @@ const Users = () => {
             const res = await axiosSecure.get(`/users`)
             return res.data;
         }
-
     })
-    console.log(users)
+
+    const handleMakeAdmin =  (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "Do you want to make him an admin!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, I'm sure."
+        }).then(async(result) => {
+            if (result.isConfirmed) {
+                await axiosSecure.patch(`/users/admin/${id}`)
+                    .then(res => {
+                        console.log(res.data)
+                        if (res.data.modifiedCount > 0) {
+                            Swal.fire({
+                                title: "Admin!",
+                                text: "Admin has been created.",
+                                icon: "success" ,
+                                showConfirmButton: false,
+                                timer: 1800
+                            });
+                        }
+                    })
+            }
+        });
+
+    }
+
     return (
         <div>
             <DeshboardBanner img={usersBanner} title={'User Management'}></DeshboardBanner>
@@ -46,7 +75,7 @@ const Users = () => {
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
                                 <td className="text-end">
-                                    {user.isAdmin ? (
+                                    {user?.role == 'admin' ? (
                                         <button
                                             className="btn btn-disabled flex gap-2 items-center bg-gray-500 text-white"
                                             disabled
@@ -57,7 +86,7 @@ const Users = () => {
                                     ) : (
                                         <button
                                             className="btn btn-sm flex gap-2 items-center"
-                                        // onClick={() => onMakeAdmin(user.id)}
+                                            onClick={() => handleMakeAdmin(user._id)}
                                         >
                                             <FaUser />
                                             Make Admin
