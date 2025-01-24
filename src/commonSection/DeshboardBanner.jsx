@@ -3,7 +3,7 @@
 
 const DeshboardBanner = ({img, title, description}) => {
     return (
-        <section className={`bg-fixed mx-auto flex justify-center items-center min-h-[300px] bg-cover bg-center`} style={{ backgroundImage: `url(${img})` }}>
+        <section className={`bg-fixed mx-auto flex justify-center items-center min-h-[200px] bg-cover bg-center`} style={{ backgroundImage: `url(${img})` }}>
         <div className={`px-16 bg-black bg-opacity-60 h-[100px] w-full rounded-lg shadow-lg max-w-screen-md flex flex-col items-center justify-center`}>
             <h2 className="text-3xl font-bold text-white">{title}</h2>
             <p className="mt-4 px-8 text-center text-sm text-white">

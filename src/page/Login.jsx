@@ -6,11 +6,13 @@ import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet";
+import useAxiosPublic from "../hooks/useAxiosPublic";
 
 const Login = () => {
     const {createLogin,googleSignUp, userProfile} = useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate();
+    const axiosPublic = useAxiosPublic()
 
 
     const handleSubmit = e => {
@@ -24,7 +26,7 @@ const Login = () => {
                     console.log(result.user)
                     toast.success('successfully login')
                     e.target.reset()
-                    // navigate(from, { replace: true });
+                    navigate(location.state?.from?.pathname || "/")
                 })
                 .catch(err => {
                     console.log(err.message);
@@ -42,15 +44,16 @@ const Login = () => {
                 .then(async (result) => {
                     console.log(result.user)
                     userProfile(result.user.displayName, result.user.photoURL)
-                    // console.log(result.user.displayName, result.user.photoURL)
-                    // const userInfo = {
-                    //     userName: result.user.displayName,
-                    //     userEmail:result.user.email
-                    // }
-                    // console.log(userInfo)
-                    // const res = await axiosPublic.post('/user', userInfo)
-                    // console.log(res.data)
-                    // toast.success('successfully sign up')
+                    console.log(result.user.displayName, result.user.photoURL)
+                    const userInfo = {
+                        name: result.user?.displayName,
+                        email:result.user?.email,
+                        photoURL: result.user?.photoURL
+                    }
+                    console.log(userInfo)
+                    const res = await axiosPublic.post('/user', userInfo)
+                    console.log(res.data)
+                    toast.success('successfully sign up')
                     navigate(location.state?.from?.pathname || "/")
                 })
                 .catch(err => {

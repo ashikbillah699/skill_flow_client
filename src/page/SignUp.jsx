@@ -2,38 +2,43 @@ import { FaFacebookF, FaGithub, FaGoogle } from "react-icons/fa";
 import loginImg from '../assets/authentication2 1.png'
 import loginBg from '../assets/Rectangle 75.png'
 import { useForm } from "react-hook-form"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
-import toast from "react-hot-toast";
 import { Helmet } from "react-helmet";
+import useAxiosPublic from "../hooks/useAxiosPublic";
+import toast from "react-hot-toast";
 
 const SignUp = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const axiosPublic = useAxiosPublic()
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const { createSignUp, userProfile, googleSignUp } = useContext(AuthContext)
-
+    const navigate = useNavigate()
     const onSubmit = (data) => {
         try {
             createSignUp(data.email, data.password)
                 .then(async (result) => {
                     console.log(result.user)
                     userProfile(data?.displayName, data?.photoURL)
-                    // const userInfo = {
-                    //     userName: data?.displayName,
-                    //     userEmail: data?.email
-                    // }
-                    // console.log(userInfo)
-                    // const res = await axiosPublic.post('/user', userInfo)
-                    // if (res.data.insertedId) {
-                    toast.success('successfully sign up')
-                    //     reset()
-                    //     navigate('/')
-                    // }
+                    const userInfo = {
+                        name: data?.displayName,
+                        email: data?.email,
+                        photoURL:data?.photoURL
+                    }
+                    console.log(userInfo)
+                    const res = await axiosPublic.post('/user', userInfo)
+                    console.log(res.data)
+                    if (res.data.insertedId) {
+                        reset()
+                        toast.success('successfully sign up')
+                        navigate('/')
+                    }
 
                 })
                 .catch(err => {
                     console.log(err.message)
                     toast.error(err.message)
+                    reset()
                 })
         }
         catch (err) {
@@ -45,21 +50,22 @@ const SignUp = () => {
         try {
             googleSignUp()
                 .then(async (result) => {
-                    console.log(result.user)
-                    // const userInfo = {
-                    //     userName: result.user.displayName,
-                    //     userEmail:result.user.email
-                    // }
-                    // console.log(userInfo)
-                    // const res = await axiosPublic.post('/user', userInfo)
-                    // console.log(res.data)
-                    // toast.success('successfully sign up')
                     userProfile(result.user.displayName, result.user.photoURL)
-                    // navigate('/')
+
+                    const userInfo = {
+                        name: result.user?.displayName,
+                        email: result.user?.email,
+                        photoURL: result.user?.photoURL
+                    }
+
+                    const res = await axiosPublic.post('/user', userInfo)
+                    console.log(res.data)
+                    toast.success('successfully sign up')
+                    navigate('/')
                 })
                 .catch(err => {
                     console.log(err.message)
-                    // toast.error(err.message)
+                    toast.error(err.message)
                 })
         }
         catch (err) {

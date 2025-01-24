@@ -1,9 +1,74 @@
+import { useQuery } from "@tanstack/react-query";
+import { FaUser, FaUserShield } from "react-icons/fa6";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import DeshboardBanner from "../../../commonSection/DeshboardBanner";
+import usersBanner from '../../../assets/usersbanner.jpg'
 
 
 const Users = () => {
+    const axiosSecure = useAxiosPublic();
+
+    const { data: users = [] } = useQuery({
+        queryKey: ['users'],
+        queryFn: async () => {
+            const res = await axiosSecure.get(`/users`)
+            return res.data;
+        }
+
+    })
+    console.log(users)
     return (
         <div>
-            Alluser page
+            <DeshboardBanner img={usersBanner} title={'User Management'}></DeshboardBanner>
+            <div className="overflow-x-auto p-6 bg-gray-100 min-h-screen">
+                <table className="table w-full border">
+                    <thead className="bg-gray-800 text-white">
+                        <tr>
+                            <th className="text-center py-3">#</th>
+                            <th>User Name</th>
+                            <th>User Email</th>
+                            <th className="text-center">Profile Image</th>
+                            <th className="text-center">Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {users.map((user, index) => (
+                            <tr key={user.id} className="hover:bg-gray-200">
+                                <td className="text-center">{index + 1}</td>
+                                <td className="flex justify-center">
+                                    <img
+                                        src={user.photoURL}
+                                        alt="profile"
+                                        className="w-12 h-12 rounded-full border border-gray-300"
+                                    />
+                                </td>
+                                <td>{user.name}</td>
+                                <td>{user.email}</td>
+                                <td className="text-end">
+                                    {user.isAdmin ? (
+                                        <button
+                                            className="btn btn-disabled flex gap-2 items-center bg-gray-500 text-white"
+                                            disabled
+                                        >
+                                            <FaUserShield />
+                                            Admin
+                                        </button>
+                                    ) : (
+                                        <button
+                                            className="btn btn-sm flex gap-2 items-center"
+                                        // onClick={() => onMakeAdmin(user.id)}
+                                        >
+                                            <FaUser />
+                                            Make Admin
+                                        </button>
+                                    )}
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };

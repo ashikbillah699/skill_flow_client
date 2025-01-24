@@ -13,7 +13,7 @@ const DeshboardLayout = () => {
         <div>
             <div className="flex flex-col md:flex-row min-h-screen">
                 {/* Sidebar */}
-                <div className="w-full md:w-1/5 bg-black text-[#F36B27] font-black p-8">
+                <div className="w-full md:w-1/5 bg-gray-950 text-[#c76f44] font-black p-8">
                     <div className="flex flex-col mb-8">
                         <a className="text-2xl font-bold">SKILLFLOW</a>
                         {/* <a className="text-xl font-thin tracking-widest">RESTURENT</a> */}

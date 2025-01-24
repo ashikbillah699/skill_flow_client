@@ -11,7 +11,6 @@ const TeacherRequest = () => {
     return (
         <div>
             <DeshboardBanner img={teacherReq} title={'Teacher Requests'}></DeshboardBanner>
-            {/* <h2 className="text-3xl font-bold text-center mb-8">Teacher Requests</h2> */}
             <div className="px-6 lg:px-16 py-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {teachOn.map((request) => (
