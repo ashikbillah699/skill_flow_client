@@ -24,6 +24,7 @@ const SignUp = () => {
                         name: data?.displayName,
                         email: data?.email,
                         photoURL:data?.photoURL,
+                        phoneNumber: data?.phoneNumber,
                         role: 'student'
                     }
                     console.log(userInfo)
@@ -57,6 +58,7 @@ const SignUp = () => {
                         name: result.user?.displayName,
                         email: result.user?.email,
                         photoURL: result.user?.photoURL,
+                        phoneNumber:result.user?.phoneNumber,
                         role: 'student'
                     }
 
@@ -128,6 +130,21 @@ const SignUp = () => {
                             />
                         </div>
                         {errors.email && <span className="text-red-500">This field is required</span>}
+
+                        <div>
+                            <label className="block text-sm font-medium text-gray-600 mb-1">
+                                Phone
+                            </label>
+                            <input
+                                {...register("phoneNumber", { required: true })}
+                                name="phoneNumber"
+                                type="number"
+                                placeholder="Type here"
+                                className="input input-bordered w-full"
+                                style={{ fontFamily: "Open Sans, sans-serif" }}
+                            />
+                        </div>
+                        {errors.phoneNumber && <span className="text-red-500">This field is required</span>}
 
                         {/* Password */}
                         <div>

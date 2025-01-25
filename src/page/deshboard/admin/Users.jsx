@@ -1,14 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import { FaUser, FaUserShield } from "react-icons/fa6";
-import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import DeshboardBanner from "../../../commonSection/DeshboardBanner";
 import usersBanner from '../../../assets/usersbanner.jpg'
 import Swal from 'sweetalert2'
 import { useState } from "react";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 
 const Users = () => {
-    const axiosSecure = useAxiosPublic();
+    const axiosSecure = useAxiosSecure();
     const [search, setSearch] = useState('')
 
     const handleSearch = () => {
@@ -79,11 +79,11 @@ const Users = () => {
 
                     <tbody>
                         {users.map((user, index) => (
-                            <tr key={user.id} className="hover:bg-gray-200">
+                            <tr key={index} className="hover:bg-gray-200">
                                 <td className="text-center">{index + 1}</td>
                                 <td className="flex justify-center">
                                     <img
-                                        src={user.photoURL}
+                                        src={user?.photoURL}
                                         alt="profile"
                                         className="w-12 h-12 rounded-full border border-gray-300"
                                     />
@@ -93,7 +93,7 @@ const Users = () => {
                                 <td className="text-end">
                                     {user?.role == 'admin' ? (
                                         <button
-                                            className="btn btn-disabled flex gap-2 items-center bg-gray-500 text-white"
+                                            className="btn btn-sm btn-disabled flex gap-2 items-center bg-gray-500 text-white"
                                             disabled
                                         >
                                             <FaUserShield />

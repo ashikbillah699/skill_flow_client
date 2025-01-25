@@ -49,6 +49,7 @@ const Login = () => {
                         name: result.user?.displayName,
                         email:result.user?.email,
                         photoURL: result.user?.photoURL,
+                        phoneNumber:result.user?.phoneNumber,
                         role: 'student'
                     }
                     console.log(userInfo)
