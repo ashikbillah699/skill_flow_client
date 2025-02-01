@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 
-
 const AssignmentList = ({classDetails}) => {
     return (
         <div className=" px-8 py-6">

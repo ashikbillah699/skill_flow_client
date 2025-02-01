@@ -3,21 +3,24 @@ import useTeachOn from "../../../hooks/useTeachOn";
 import DeshboardBanner from "../../../commonSection/DeshboardBanner";
 import teacherReq from '../../../assets/teacherReq3.jpg'
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import toast from "react-hot-toast";
 
 
 const TeacherRequest = () => {
     const axiosSecure = useAxiosSecure()
 
     const [teachOn, refetch] = useTeachOn()
-    refetch()
+    // refetch()
     console.log(teachOn)
 
-    const handleApprove = async(id)=>{
-        // console.log(id)
-        await axiosSecure.patch(`/teachOnAccepted/${id}`)
+    const handleApprove = async(id, userInfo)=>{
+        console.log(id)
+        await axiosSecure.patch(`/teachOnAccepted/${id}`, {userInfo})
         .then(res =>{
             if(res.data.modifiedCount){
-                console.log("ssssssssssssssssssssssssssss")
+                console.log(res.data)
+                toast.success('Approved Successfully! This user is now a teacher!!')
+                refetch();
             }
         })
     }
@@ -70,15 +73,16 @@ const TeacherRequest = () => {
                             <div className="card-actions justify-end p-4 border-t">
                                 <button
                                     className="btn btn-success btn-sm flex items-center gap-2"
-                                    // disabled={request.status === "rejected"}
-                                    onClick={()=>handleApprove(request._id)}
+                                    disabled={request.status === "rejected" || request.status === "accepted"}
+                                    onClick={()=>handleApprove(request._id, request.userInfo)}
                                 >
                                     <FaCheck />
                                     Approve
                                 </button>
                                 <button
                                     className="btn btn-error btn-sm flex items-center gap-2"
-                                    // disabled={request.status === "rejected"}
+                                    disabled={request.status === "rejected"}
+                                    // onClick={()=>handleApprove(request._id)}
                                 >
                                     <FaTimes />
                                     Reject
