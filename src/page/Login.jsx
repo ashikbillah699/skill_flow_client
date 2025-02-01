@@ -52,7 +52,7 @@ const Login = () => {
                         phoneNumber:result.user?.phoneNumber,
                         role: 'student'
                     }
-                    console.log(userInfo)
+                    
                     const res = await axiosPublic.post('/user', userInfo)
                     console.log(res.data)
                     toast.success('successfully sign up')

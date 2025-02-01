@@ -10,12 +10,12 @@ const useRole = () => {
         queryKey: [user?.email, 'roles'],
         queryFn: async () => {
             const res = await axiosSecure.get(`/usersRole/${user.email}`);
-            console.log(res.data); 
+            // console.log(res.data); 
             return res.data;
         }
     });
 
-    return [roles, isRolesLoading]; // roles.admin & roles.teacher হিসাবে অ্যাক্সেস করুন
+    return [roles, isRolesLoading]; 
 };
 
 export default useRole;

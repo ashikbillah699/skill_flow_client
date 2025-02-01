@@ -1,16 +1,20 @@
 import { Helmet } from "react-helmet";
 import BgCover from "../../commonSection/BgCover";
 import teachOnBg from '../../assets/teachOn2.jpg'
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from 'sweetalert2';
 import toast from "react-hot-toast";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import useUser from "../../hooks/useUser";
 
 
 const TeachOn = () => {
+    const [users] = useUser()
+    console.log(users)
     const { user } = useContext(AuthContext)
     const axiosSecure = useAxiosSecure()
+    const [isSubmitted, setIsSubmitted] = useState(false); 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -20,22 +24,27 @@ const TeachOn = () => {
         const title = e.target.title.value;
         const category = e.target.category.value;
         const experience = e.target.experience.value;
-        const teachOnData = { email, teacherName, photoUrl, title, category, experience, status: 'pending' };
+        const teachOnData = { email, teacherName, photoUrl, title, category, experience, status: 'pending',userInfo:{
+            email: user?.email,
+            role:user?.role,
+            userId: user?._id
+        } };
         console.table(teachOnData);
         try {
             await axiosSecure.post(`/teachOn`, teachOnData)
-            .then(res =>{
-                console.log(res.data)
-                if(res.data.insertedId){
-                    Swal.fire({
-                        position: "center",
-                        icon: "success",
-                        title: "Your request has been received successfully, please wait for approval.",
-                        showConfirmButton: false,
-                        timer: 1800
-                      });
-                }
-            })
+                .then(res => {
+                    console.log(res.data)
+                    if (res.data.insertedId) {
+                        setIsSubmitted(true)
+                        Swal.fire({
+                            position: "center",
+                            icon: "success",
+                            title: "Your request has been received successfully, please wait for approval.",
+                            showConfirmButton: false,
+                            timer: 1800
+                        });
+                    }
+                })
         }
         catch (error) {
             console.log("Error occurred:", error.message);
@@ -68,7 +77,6 @@ const TeachOn = () => {
                             name="email"
                             value={user?.email}
                             className="btn btn-sm bg-gray-800 text-white mb-4 cursor-pointer" />
-                        {/* {user?.email} */}
                     </div>
                     <div className="mt-4">
                         <label className="label font-semibold">Name</label>
@@ -78,6 +86,7 @@ const TeachOn = () => {
                             defaultValue={user?.displayName}
                             placeholder="Enter your name"
                             className="input input-bordered w-full"
+                            disabled={isSubmitted}
                             required
                         />
                     </div>
@@ -88,6 +97,7 @@ const TeachOn = () => {
                             name="photoUrl"
                             className="input input-bordered w-full"
                             defaultValue={user?.photoURL}
+                            disabled={isSubmitted}
                             required
                         />
                     </div>
@@ -107,6 +117,7 @@ const TeachOn = () => {
                                 name="title"
                                 placeholder="Enter your course title"
                                 className="input input-bordered w-full"
+                                disabled={isSubmitted}
                                 required
                             />
                         </div>
@@ -117,6 +128,7 @@ const TeachOn = () => {
                             <select
                                 name="category"
                                 className="select select-bordered w-full"
+                                disabled={isSubmitted}
                                 required
                             >
                                 <option value=''>
@@ -136,6 +148,7 @@ const TeachOn = () => {
                             <select
                                 name="experience"
                                 className="select select-bordered w-full"
+                                disabled={isSubmitted}
                                 required
                             >
                                 <option value=''>
@@ -152,10 +165,16 @@ const TeachOn = () => {
                             <button
                                 type="submit"
                                 className="btn btn-primary w-full text-white"
+                                disabled={isSubmitted}
                             >
                                 Submit for Review
                             </button>
                         </div>
+                        {isSubmitted && (
+                            <div className="form-control text-center">
+                                <p>Your request is under review. Wait for admin approval.</p>
+                            </div>
+                        )}
                     </div>
                 </div>
             </form>

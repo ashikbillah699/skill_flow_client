@@ -1,5 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react-hooks/rules-of-hooks */
 import axios from 'axios';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 
@@ -13,7 +15,7 @@ const useAxiosSecure = () => {
 
     axiosSecure.interceptors.request.use(function (config) {
         const token = localStorage.getItem('access-token');
-        console.log('Adding Token:', token);
+        // console.log('Adding Token:', token);
         config.headers.authorization = `Bearer ${token}`;
         return config;
     }, function (error) {
@@ -22,12 +24,14 @@ const useAxiosSecure = () => {
 
     axiosSecure.interceptors.response.use(function (response) {
         return response;
-      },async function(error) {
+      }, function(error) {
         const status = error.response.status;
         console.log('interceptors error: ', error);
         if(status === 401 || status === 403){
-            await logOut();
-            navigate('/login')
+            useEffect(() => {
+                logOut();
+                navigate('/login', { replace: true }); // রিডাইরেক্ট
+            }, [logOut, navigate]);
         }
         return Promise.reject(error);
       });

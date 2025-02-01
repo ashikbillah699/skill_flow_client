@@ -2,12 +2,26 @@ import { FaCheck, FaTimes } from "react-icons/fa";
 import useTeachOn from "../../../hooks/useTeachOn";
 import DeshboardBanner from "../../../commonSection/DeshboardBanner";
 import teacherReq from '../../../assets/teacherReq3.jpg'
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 
 const TeacherRequest = () => {
+    const axiosSecure = useAxiosSecure()
+
     const [teachOn, refetch] = useTeachOn()
     refetch()
     console.log(teachOn)
+
+    const handleApprove = async(id)=>{
+        // console.log(id)
+        await axiosSecure.patch(`/teachOnAccepted/${id}`)
+        .then(res =>{
+            if(res.data.modifiedCount){
+                console.log("ssssssssssssssssssssssssssss")
+            }
+        })
+    }
+
     return (
         <div>
             <DeshboardBanner img={teacherReq} title={'Teacher Requests'}></DeshboardBanner>
@@ -56,14 +70,15 @@ const TeacherRequest = () => {
                             <div className="card-actions justify-end p-4 border-t">
                                 <button
                                     className="btn btn-success btn-sm flex items-center gap-2"
-                                    disabled={request.status === "rejected"}
+                                    // disabled={request.status === "rejected"}
+                                    onClick={()=>handleApprove(request._id)}
                                 >
                                     <FaCheck />
                                     Approve
                                 </button>
                                 <button
                                     className="btn btn-error btn-sm flex items-center gap-2"
-                                    disabled={request.status === "rejected"}
+                                    // disabled={request.status === "rejected"}
                                 >
                                     <FaTimes />
                                     Reject

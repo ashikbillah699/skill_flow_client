@@ -30,12 +30,12 @@ const AuthProvider = ({ children }) => {
     }
 
     const userProfile = (displayName, photoURL) => {
-        // setLoading(true);
+        setLoading(true);
         return updateProfile(auth.currentUser, { displayName, photoURL })
     }
 
     const googleSignUp = () => {
-        // setLoading(true);
+        setLoading(true);
         return signInWithPopup(auth, googleProvider)
     }
 
@@ -51,7 +51,7 @@ const AuthProvider = ({ children }) => {
                 const userInfo = { email: currentUser.email };
                 axiosPublic.post(`/jwt`, userInfo)
                     .then(res => {
-                        console.log(res.data)
+                        // console.log(res.data)
                         if (res.data.token) {
                             localStorage.setItem('access-token', res.data.token);
                             setLoading(false)

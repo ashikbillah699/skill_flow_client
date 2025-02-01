@@ -9,7 +9,7 @@ import useRole from "../hooks/useRole";
 
 const DeshboardLayout = () => {
     const [roles] = useRole();
-    console.log(roles)
+    // console.log(roles)
     return (
         <div>
             <div className="flex flex-col md:flex-row min-h-screen">
@@ -21,7 +21,7 @@ const DeshboardLayout = () => {
                     </div>
                     <ul className="flex flex-col space-y-5">
 
-                        <li><NavLink to='/deshboard/profile' href="#manage-bookings" className="hover:text-white duration-300 font-bold flex items-center gap-3"><ImProfile />Profile</NavLink></li>
+                        <li><NavLink to='/deshboard' href="#manage-bookings" className="hover:text-white duration-300 font-bold flex items-center gap-3"><ImProfile />Profile</NavLink></li>
                         {roles?.admin && <>
                             <li><NavLink to='/deshboard/teacherRequest' className="hover:text-white duration-300 font-bold flex items-center gap-3"><MdRequestQuote />  Teacher Request</NavLink></li>
                             <li><NavLink to='/deshboard/users' href="#add-items" className="hover:text-white duration-300 font-bold flex items-center gap-3"><HiUser />Users</NavLink></li>
