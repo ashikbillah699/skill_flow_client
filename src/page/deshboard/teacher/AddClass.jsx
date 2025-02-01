@@ -21,7 +21,8 @@ const AddClass = () => {
         const price = e.target.price.value;
         const description = e.target.description.value;
         const image = e.target.image.value;
-        const fromData = { title, name, email, price, description, image, status: 'pending' };
+        const countAssignmnet = parseInt('0');
+        const fromData = { title, name, email, price, description, image, countAssignmnet, status: 'pending' };
 
         Swal.fire({
             title: "Do you want to add this class?",

@@ -6,6 +6,7 @@ import Swal from 'sweetalert2'
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import toast from "react-hot-toast";
 import MyClassUpdate from "./MyClassUpdate";
+import { Link } from "react-router-dom";
 
 
 const MyClass = () => {
@@ -69,12 +70,14 @@ const MyClass = () => {
                             </button>
                         </div>
 
-                        <button
-                            // onClick={() => navigate(`/dashboard/my-class/${cls.id}`)}
-                            disabled={cls.status !== 'approved'}
-                            className="mt-3 w-full bg-gray-500 text-white disabled:opacity-50 disabled:cursor-not-allowed rounded-md">
-                            See Details
-                        </button>
+                        <Link
+                            to={(`/deshboard/myClassDetails/${cls._id}`)}>
+                            <button
+                                disabled={cls.status !== 'approved'}
+                                className="mt-3 w-full bg-gray-800 text-white disabled:opacity-50 disabled:cursor-not-allowed rounded-md">
+                                See Details
+                            </button>
+                        </Link>
                     </div>
                 ))}
             </div>

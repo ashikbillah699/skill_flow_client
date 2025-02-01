@@ -14,6 +14,7 @@ import ReqAllClasses from "../page/deshboard/admin/ReqAllClasses";
 import Profile from "../commonSection/Profile";
 import AddClass from "../page/deshboard/teacher/AddClass";
 import MyClass from "../page/deshboard/teacher/MyClass";
+import MyClassDetails from "../page/deshboard/teacher/MyClassDetails";
 
 const router = createBrowserRouter([
     {
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
             {
                 path:'/deshboard/myClass',
                 element: <MyClass></MyClass>
+            },
+            {
+                path: '/deshboard/myClassDetails/:id',
+                element: <MyClassDetails></MyClassDetails>
             }
         ]
     }
