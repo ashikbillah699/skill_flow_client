@@ -39,6 +39,9 @@ const AllClasses = () => {
             category: "English",
         },
     ];
+
+   
+
     return (
         <div>
             <Helmet>

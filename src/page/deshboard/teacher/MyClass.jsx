@@ -52,7 +52,7 @@ const MyClass = () => {
                         <h3 className="text-xl font-semibold mt-3">{cls.title}</h3>
                         <p className="text-sm text-gray-500">By {cls.name} ({cls.email})</p>
                         <p className="text-lg font-medium mt-2">$ {cls.price}</p>
-                        <p className="text-sm mt-1">{cls.description}</p>
+                        <p className="text-sm mt-1">{cls.description.slice(0, 30)}...</p>
                         <p className={`text-sm font-semibold mt-2 ${cls.status === 'approved' ? 'text-green-500' : 'text-yellow-500'}`}>{cls.status}</p>
 
                         <div className="flex justify-between items-center mt-4">
