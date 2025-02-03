@@ -15,6 +15,7 @@ import Profile from "../commonSection/Profile";
 import AddClass from "../page/deshboard/teacher/AddClass";
 import MyClass from "../page/deshboard/teacher/MyClass";
 import MyClassDetails from "../page/deshboard/teacher/MyClassDetails";
+import PrivetRoute from "./PrivetRoute";
 
 const router = createBrowserRouter([
     {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/teachOn',
-                element: <TeachOn></TeachOn>
+                element: <PrivetRoute><TeachOn></TeachOn></PrivetRoute>
             },
             {
                 path:'/login',

@@ -13,6 +13,7 @@ const TeacherRequest = () => {
     // refetch()
     console.log(teachOn)
 
+    // approved functionality
     const handleApprove = async(id, userInfo)=>{
         console.log(id)
         await axiosSecure.patch(`/teachOnAccepted/${id}`, {userInfo})
@@ -24,13 +25,27 @@ const TeacherRequest = () => {
             }
         })
     }
+    
+    // reject functionality
+    const handleReject = async(id, userInfo)=>{
+        console.log(id)
+        await axiosSecure.patch(`/teachOnRejected/${id}`, {userInfo})
+        .then(res =>{
+            if(res.data.modifiedCount){
+                console.log(res.data)
+                toast.success('Rejected Successfully!!')
+                refetch();
+            }
+        })
+    }
 
     return (
         <div>
             <DeshboardBanner img={teacherReq} title={'Teacher Requests'}></DeshboardBanner>
             <div className="px-6 lg:px-16 py-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {teachOn.map((request) => (
+                    {teachOn.length == 0 ? <p className="text-3xl col-span-3 text-center text-green-500">Not a request to become a teacher.</p> 
+                    : teachOn.map((request) => (
                         <div
                             key={request._id}
                             className="card shadow-lg rounded-lg bg-white hover:shadow-xl transition-transform transform hover:-translate-y-2"
@@ -82,7 +97,7 @@ const TeacherRequest = () => {
                                 <button
                                     className="btn btn-error btn-sm flex items-center gap-2"
                                     disabled={request.status === "rejected"}
-                                    // onClick={()=>handleApprove(request._id)}
+                                    onClick={()=>handleReject(request._id, request.userInfo)}
                                 >
                                     <FaTimes />
                                     Reject
