@@ -14,7 +14,7 @@ const ClassCart = ({ classItem }) => {
                     className="h-52 w-full object-cover"
                 />
                 <span className="absolute top-2 right-2 bg-[#F36B27] text-white text-xs px-2 py-1 rounded-lg">
-                    {classItem.category}
+                    total enrold
                 </span>
             </div>
             <div className="p-4 space-y-2">
@@ -26,7 +26,7 @@ const ClassCart = ({ classItem }) => {
                     <p className="text-sm text-gray-500">{classItem.name}</p>
                 </div>
                 <h2 className="text-lg font-semibold">{classItem.title}</h2>
-                <p className="text-sm text-gray-500">{classItem.description}</p>
+                <p className="text-sm text-gray-500">{classItem.description.slice(0, 50)}...</p>
 
                 <div className="flex justify-between items-center">
                     <Link to={`/classDetails/${classItem.id}`}><button className="btn-sm mt-2 gap-3 flex justify-between items-center">Enroll Now<FaArrowRightLong /></button></Link>
