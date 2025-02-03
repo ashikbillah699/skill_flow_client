@@ -16,6 +16,9 @@ import AddClass from "../page/deshboard/teacher/AddClass";
 import MyClass from "../page/deshboard/teacher/MyClass";
 import MyClassDetails from "../page/deshboard/teacher/MyClassDetails";
 import PrivetRoute from "./PrivetRoute";
+import MyEnrollClass from "../page/deshboard/student/MyEnrollClass";
+import Payment from "../page/allClasses/Payment";
+import ErrorPage from "../page/ErrorPage";
 
 const router = createBrowserRouter([
     {
@@ -45,6 +48,10 @@ const router = createBrowserRouter([
             {
                 path: '/signUp',
                 element: <SignUp></SignUp>
+            },
+            {
+                path: '/payment/:id',
+                element: <Payment></Payment>
             }
         ]
     },
@@ -79,8 +86,16 @@ const router = createBrowserRouter([
             {
                 path: '/deshboard/myClassDetails/:id',
                 element: <MyClassDetails></MyClassDetails>
+            },
+            {
+                path: '/deshboard/myEnrollClass',
+                element: <MyEnrollClass></MyEnrollClass>
             }
         ]
+    },
+    {
+        path: '*',
+        element: <ErrorPage></ErrorPage>
     }
 ])
 

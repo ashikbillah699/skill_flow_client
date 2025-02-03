@@ -9,16 +9,14 @@ const AllClasses = () => {
 
     const axiosPublic = useAxiosPublic();
 
-    const { data: allClass = [], isLoading, refetch } = useQuery({
+    const { data: allClass = [], isLoading } = useQuery({
         queryKey: ['allClass'],
         queryFn: async () => {
             const res = await axiosPublic.get('/appAllClass');
-            console.log(res.data)
             return res.data
         }
     })
     
-    refetch()
     if (isLoading) return <div className="text-center"><span className="loading loading-spinner loading-lg"></span></div>
 
     return (

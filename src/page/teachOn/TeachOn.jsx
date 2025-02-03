@@ -32,16 +32,16 @@ const TeachOn = () => {
         }
     }
 
-    const handleReSubmit = async() =>{
+    const handleReSubmit = async () => {
         setIsSubmitted(false)
-        try{
-            const {data} = await axiosSecure.delete(`/teachOnStatus/${user?.email}`)
+        try {
+            const { data } = await axiosSecure.delete(`/teachOnStatus/${user?.email}`)
             console.log(data)
-            if(data?.deletedCount > 0){
+            if (data?.deletedCount > 0) {
                 setStatus("pending")
             }
         }
-        catch(err){
+        catch (err) {
             console.log(err)
         }
     }
@@ -220,12 +220,12 @@ const TeachOn = () => {
                 </> : <>
                     <div className="flex justify-center items-center py-10">
                         {status === 'pending' && <p className="text-3xl text-yellow-500">Your request is under review. Please wait for approval.🌹</p>}
-                        {status === 'accepted' && <p className="text-center text-3xl text-green-500">Hey!! { user?.displayName} <br /> You are currently a teacher!✔</p>}
+                        {status === 'accepted' && <p className="text-center text-3xl text-green-500">Hey!! {user?.displayName} <br /> You are currently a teacher!✔</p>}
                         {status === 'rejected' && (
                             <div className="text-center">
                                 <p className="text-3xl text-red-500">Your request has been denied.😢</p>
                                 <button onClick={handleReSubmit} className="btn btn-secondary mt-4">
-                                    পুনরায় আবেদন করুন
+                                    Reapply
                                 </button>
                             </div>
                         )}

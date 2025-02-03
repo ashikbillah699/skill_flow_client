@@ -29,7 +29,7 @@ const ClassCart = ({ classItem }) => {
                 <p className="text-sm text-gray-500">{classItem.description.slice(0, 50)}...</p>
 
                 <div className="flex justify-between items-center">
-                    <Link to={`/classDetails/${classItem.id}`}><button className="btn-sm mt-2 gap-3 flex justify-between items-center">Enroll Now<FaArrowRightLong /></button></Link>
+                    <Link to={`/classDetails/${classItem._id}`}><button className="btn-sm mt-2 gap-3 flex justify-between items-center">Enroll Now<FaArrowRightLong /></button></Link>
                     <p className="text-lg font-bold text-[#F36B27]">{classItem.price}</p>
                 </div>
 
