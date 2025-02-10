@@ -2,18 +2,18 @@ import { Helmet } from "react-helmet";
 import BgCover from "../../commonSection/BgCover";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import useAxiosPublic from "../../hooks/useAxiosPublic";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const ClassDetails = () => {
-    const axiosPublic = useAxiosPublic()
+    const axiosSecure = useAxiosSecure()
     const { id } = useParams();
-    console.log(id)
+    // console.log(id)
 
     const { data: classDetails = {} } = useQuery({
         queryKey: ['classDetails', id],
         queryFn: async () => {
-            const { data } = await axiosPublic.get(`/classDetails/${id}`);
-            console.log(data)
+            const { data } = await axiosSecure.get(`/classDetails/${id}`);
+            // console.log(data)
             return data
         }
     });
@@ -69,9 +69,7 @@ const ClassDetails = () => {
                                     <Link to={`/payment/${_id}`} className="btn btn-success">Pay Now</Link>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
             </div>

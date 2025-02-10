@@ -21,9 +21,10 @@ const AddClass = () => {
         const price = e.target.price.value;
         const description = e.target.description.value;
         const image = e.target.image.value;
-        const countAssignmnet = parseInt('0');
-        const fromData = { title, name, email, price, description, image, countAssignmnet, status: 'pending' };
-
+        const countAssignmnet = parseInt(0);
+        const countEnroll = parseInt(0)
+        const fromData = { title, name, email, price, description, image, countAssignmnet, status: 'pending', countEnroll };
+console.log(fromData)
         Swal.fire({
             title: "Do you want to add this class?",
             showDenyButton: true,
@@ -33,6 +34,7 @@ const AddClass = () => {
             if (result.isConfirmed) {
                 try {
                     const { data } = await axiosSecure.post('/addClass', fromData);
+                    console.log(data)
                     if (data.insertedId) {
                         Swal.fire("Added! Wait for admin approval", "", "success");
                         e.target.reset()
