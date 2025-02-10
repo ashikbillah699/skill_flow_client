@@ -19,6 +19,7 @@ import PrivetRoute from "./PrivetRoute";
 import MyEnrollClass from "../page/deshboard/student/MyEnrollClass";
 import Payment from "../page/allClasses/Payment";
 import ErrorPage from "../page/ErrorPage";
+import MyEnrollClassDetails from "../page/deshboard/student/MyEnrollClassDetails";
 
 const router = createBrowserRouter([
     {
@@ -90,6 +91,11 @@ const router = createBrowserRouter([
             {
                 path: '/deshboard/myEnrollClass',
                 element: <MyEnrollClass></MyEnrollClass>
+            },
+            {
+                path:'/deshboard/myEnrollClassDetails/:id',
+                element: <MyEnrollClassDetails></MyEnrollClassDetails>
+
             }
         ]
     },
