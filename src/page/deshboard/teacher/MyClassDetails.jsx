@@ -48,7 +48,7 @@ const MyClassDetails = () => {
     });
 
     // Sample data (you can replace these with actual data from your database)
-    const totalEnrollment = 150;
+    const countEnroll = 150;
     const totalSubmissions = 120;
 
     return (
@@ -58,7 +58,7 @@ const MyClassDetails = () => {
                     <div className="card h-40 w-full bg-green-100 shadow-xl ">
                         <div className="card-body text-center">
                             <h2 className="text-xl font-semibold">Total Enrollment</h2>
-                            <p className="text-3xl font-bold">{totalEnrollment}<br /> Students</p>
+                            <p className="text-3xl font-bold">{countEnroll}<br /> Students</p>
                         </div>
                     </div>
                     <div className="card h-40 w-full bg-yellow-100 shadow-xl ">

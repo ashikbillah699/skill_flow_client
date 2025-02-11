@@ -12,7 +12,7 @@ const MyEnrollClass = () => {
     const axiosSecure = useAxiosSecure();
     const { user } = useContext(AuthContext);
 
-    const { data: myClasses = [] } = useQuery({
+    const { data: myClasses = [], refetch, isLoading } = useQuery({
         queryKey: ['myClasses', user?.email],
         queryFn: async () => {
             const res = await axiosSecure.get(`/allEnroll/${user?.email}`);
@@ -20,7 +20,10 @@ const MyEnrollClass = () => {
             return res.data;
         }
     })
-    // console.log(myClasses)
+
+    refetch()
+    if (isLoading) return <div className="text-center"><span className="loading loading-spinner loading-lg"></span></div>
+
 
     return (
         <div>
