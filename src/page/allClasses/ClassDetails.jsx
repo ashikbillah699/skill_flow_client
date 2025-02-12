@@ -7,7 +7,6 @@ import useAxiosSecure from "../../hooks/useAxiosSecure";
 const ClassDetails = () => {
     const axiosSecure = useAxiosSecure()
     const { id } = useParams();
-    // console.log(id)
 
     const { data: classDetails = {} } = useQuery({
         queryKey: ['classDetails', id],
@@ -19,7 +18,7 @@ const ClassDetails = () => {
     });
     console.log(classDetails)
 
-    const { countAssignmnet, description, email, image, name, price, title, _id } = classDetails || '';
+    const { countAssignmnet, description, email, image, name, price, title, _id} = classDetails || '';
 
     return (
         <div>
@@ -45,12 +44,6 @@ const ClassDetails = () => {
                         <p className="mb-4">
                             {description}
                         </p>
-                        {/* <h3 className="font-semibold mb-2">What You’ll Learn?</h3>
-                        <ul className="list-disc ml-6 mb-4">
-                            <li>Nurturing Young Minds</li>
-                            <li>Building a Bright Future Together</li>
-                            <li>Unlocking Potential Through Education</li>
-                        </ul> */}
                     </div>
 
                     {/* Right Column: Course Details */}

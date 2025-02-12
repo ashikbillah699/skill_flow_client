@@ -30,7 +30,7 @@ const ClassCart = ({ classItem }) => {
 
                 <div className="flex justify-between items-center">
                     <Link to={`/classDetails/${classItem?._id}`}><button className="btn-sm mt-2 gap-3 flex justify-between items-center">Enroll Now<FaArrowRightLong /></button></Link>
-                    <p className="text-lg font-bold text-[#F36B27]">{classItem?.price}</p>
+                    <p className="text-lg font-bold text-[#F36B27]">Price: {classItem?.price}</p>
                 </div>
             </div>
         </div>

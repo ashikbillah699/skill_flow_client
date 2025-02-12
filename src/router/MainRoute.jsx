@@ -20,6 +20,7 @@ import MyEnrollClass from "../page/deshboard/student/MyEnrollClass";
 import Payment from "../page/allClasses/Payment";
 import ErrorPage from "../page/ErrorPage";
 import MyEnrollClassDetails from "../page/deshboard/student/MyEnrollClassDetails";
+import RoleRoute from "./RoleRoute";
 
 const router = createBrowserRouter([
     {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/classDetails/:id',
-                element: <ClassDetails></ClassDetails>
+                element: <PrivetRoute><ClassDetails></ClassDetails></PrivetRoute> 
             },
             {
                 path: '/teachOn',
@@ -58,43 +59,43 @@ const router = createBrowserRouter([
     },
     {
         path: '/deshboard',
-        element: <DeshboardLayout></DeshboardLayout>,
+        element: <PrivetRoute><DeshboardLayout></DeshboardLayout></PrivetRoute>,
         children:[
              {
                 path: '/deshboard',
-                element: <Profile></Profile>
+                element: <PrivetRoute><RoleRoute><Profile></Profile></RoleRoute></PrivetRoute>
             },
             {
                 path:'/deshboard/teacherRequest',
-                element: <TeacherRequest></TeacherRequest>
+                element: <PrivetRoute><RoleRoute><TeacherRequest></TeacherRequest></RoleRoute></PrivetRoute>
             },
             {
                 path:'/deshboard/users',
-                element: <Users></Users>
+                element: <PrivetRoute><RoleRoute><Users></Users></RoleRoute></PrivetRoute>
             },
             {
                 path:'/deshboard/reqAllClasses',
-                element: <ReqAllClasses></ReqAllClasses>
+                element: <PrivetRoute><RoleRoute><ReqAllClasses></ReqAllClasses></RoleRoute></PrivetRoute>
             },
             {
                 path:'/deshboard/addClass',
-                element: <AddClass></AddClass>
+                element: <PrivetRoute><RoleRoute><AddClass></AddClass></RoleRoute></PrivetRoute>
             },
             {
                 path:'/deshboard/myClass',
-                element: <MyClass></MyClass>
+                element: <PrivetRoute><RoleRoute><MyClass></MyClass></RoleRoute></PrivetRoute>
             },
             {
                 path: '/deshboard/myClassDetails/:id',
-                element: <MyClassDetails></MyClassDetails>
+                element: <PrivetRoute><RoleRoute><MyClassDetails></MyClassDetails></RoleRoute></PrivetRoute>
             },
             {
                 path: '/deshboard/myEnrollClass',
-                element: <MyEnrollClass></MyEnrollClass>
+                element: <PrivetRoute><RoleRoute><MyEnrollClass></MyEnrollClass></RoleRoute></PrivetRoute>
             },
             {
                 path:'/deshboard/myEnrollClassDetails/:id',
-                element: <MyEnrollClassDetails></MyEnrollClassDetails>
+                element: <PrivetRoute><RoleRoute><MyEnrollClassDetails></MyEnrollClassDetails></RoleRoute></PrivetRoute>
 
             }
         ]

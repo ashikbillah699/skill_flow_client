@@ -6,12 +6,16 @@ import { FaPlusCircle } from "react-icons/fa";
 import detailsBg from '../../../assets/addClassBg.jpg'
 import toast from "react-hot-toast";
 import AssignmentList from "./AssignmentList";
+import useAllClass from "../../../hooks/useAllClass";
 
 
 const MyClassDetails = () => {
     const { id } = useParams();
     const axiosSecure = useAxiosSecure();
     const [modalOpen, setModalOpen] = useState(false);
+    const [allClass] = useAllClass()
+    const countEnroll = allClass.find(singleClass => singleClass._id === id)?.countEnroll || 'Class Not Found';
+    const submitCount =  allClass.find(singleClass => singleClass._id === id)?.submitCount || 'Class Not Found';
 
     const handleSubmit = async(e) =>{
         e.preventDefault();
@@ -48,8 +52,7 @@ const MyClassDetails = () => {
     });
 
     // Sample data (you can replace these with actual data from your database)
-    const countEnroll = 150;
-    const totalSubmissions = 120;
+   
 
     return (
         <div className="">
@@ -70,7 +73,7 @@ const MyClassDetails = () => {
                     <div className="card h-40 w-full bg-purple-200 shadow-xl ">
                         <div className="card-body text-center">
                             <h2 className="text-xl font-semibold">Total Submission</h2>
-                            <p className="text-3xl font-bold">{totalSubmissions}<br /> Submissions</p>
+                            <p className="text-3xl font-bold">{submitCount}<br /> Submissions</p>
                         </div>
                     </div>
                 </div>

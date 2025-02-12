@@ -16,7 +16,7 @@ const Profile = () => {
             const res = await axiosSecure.get(`/users/${user.email}`);
             return res.data;
         },
-        enabled: !!user?.email, // Prevent request if email is not available
+        enabled: !!user?.email,
     });
 
 
