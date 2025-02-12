@@ -11,26 +11,6 @@ import useAxiosPublic from '../../hooks/useAxiosPublic';
 
 const Feedback = () => {
     const axiosPublic = useAxiosPublic();
-    // const reviews = [
-    //     {
-    //         _id: "1",
-    //         rating: 4.5,
-    //         details: "Their service was excellent and the team was extremely professional. Highly recommended!",
-    //         name: "John Doe"
-    //     },
-    //     {
-    //         _id: "2",
-    //         rating: 5,
-    //         details: "I’m really satisfied with the product quality. It exceeded my expectations!",
-    //         name: "Jane Smith"
-    //     },
-    //     {
-    //         _id: "3",
-    //         rating: 4,
-    //         details: "Good experience overall, but there’s still room for improvement in customer support.",
-    //         name: "Alex Johnson"
-    //     },
-    // ]
 
     const {data: feedbacks= []} = useQuery({
         queryKey: ['feddbacks'],

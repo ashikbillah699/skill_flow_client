@@ -1,33 +1,42 @@
 import countUCS from '../../assets/countImg.jpg'
 import CommonHead from '../../commonSection/CommonHead';
+import useAllClass from '../../hooks/useAllClass';
+import useEnroll from '../../hooks/useEnroll';
+import useUser from '../../hooks/useUser';
 // import useTeachOn from '../../hooks/useTeachOn';
 const CountUCS = () => {
     // const [teachOn] = useTeachOn()
+    const [users] = useUser()
+    const [allClass] = useAllClass()
+    const [allEnroll] = useEnroll()
+
+    
+    console.log(allClass)
     const stats = [
         {
             id: 1,
             title: "Total User",
-            count: 1500,
+            count: users.length,
             color: "from-blue-400 to-blue-600",
             icon: "https://img.icons8.com/ios-filled/50/ffffff/user-group-man-man.png",
         },
         {
             id: 2,
             title: "Total classes",
-            count: 45,
+            count: allClass.length,
             color: "from-green-400 to-green-600",
             icon: "https://img.icons8.com/ios-filled/50/ffffff/class.png",
         },
         {
             id: 3,
             title: "Total enrollment",
-            count: 5000,
+            count: allEnroll.length,
             color: "from-yellow-400 to-yellow-600",
             icon: "https://img.icons8.com/ios-filled/50/ffffff/open-box.png",
         },
     ];
     return (
-        <div className="max-w-screen-xl mx-auto py-16">
+        <div className="max-w-screen-xl mx-auto py-10">
             {/* {teachOn.length} */}
             <CommonHead heading={'Our Progress'}></CommonHead>
             <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-12 items-center">

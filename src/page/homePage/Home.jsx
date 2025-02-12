@@ -6,6 +6,7 @@ import Feedback from "./Feedback";
 import InspirTeachers from "./InspirTeachers";
 import Partners from "./Partners";
 import StudyAids from "./StudyAids";
+import HighlightClass from "./HighlightClass";
 
 
 const Home = () => {
@@ -22,6 +23,7 @@ const Home = () => {
             </div>
             <AboutUs></AboutUs>
             <CountUCS></CountUCS>
+            <HighlightClass></HighlightClass>
             <InspirTeachers></InspirTeachers>
             <Feedback></Feedback>
             <StudyAids></StudyAids>
