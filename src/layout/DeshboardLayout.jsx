@@ -28,7 +28,7 @@ const DeshboardLayout = () => {
                         {roles?.admin && <>
                             <li><NavLink to='/deshboard/teacherRequest' className="hover:text-white duration-300 font-bold flex items-center gap-3"><MdRequestQuote />  Teacher Request</NavLink></li>
                             <li><NavLink to='/deshboard/users' className="hover:text-white duration-300 font-bold flex items-center gap-3"><HiUser />Users</NavLink></li>
-                            <li> <NavLink to='/deshboard/reqAllClasses' className="hover:text-white duration-300 flex font-bold items-center gap-3"><MdClass />All classes</NavLink></li>
+                            <li> <NavLink to='/deshboard/reqAllClasses' className="hover:text-white duration-300 flex font-bold items-center gap-3"><MdClass />Class requests</NavLink></li>
                         </>}
 
                         {roles?.teacher && <>

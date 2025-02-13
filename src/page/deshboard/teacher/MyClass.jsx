@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 const MyClass = () => {
     const [allClass, refetch] = useAllClass()
-    const axiosSecure = useAxiosSecure()
+    const axiosSecure = useAxiosSecure();
 
     const handleDelete = (id) => {
         Swal.fire({
@@ -57,12 +57,12 @@ const MyClass = () => {
 
                         <div className="flex justify-between items-center mt-4">
                             <button
-                                onClick={() => document.getElementById('my_modal_1').showModal()}
+                                onClick={() => document.getElementById(`modal_${cls._id}`).showModal()}
                                 className="bg-blue-500 text-white flex items-center gap-2 rounded-md px-2">
                                 <FaEdit /> Update
                             </button>
                             {/* update modal */}
-                            <MyClassUpdate refetch={refetch} cls={cls}></MyClassUpdate>
+                            <MyClassUpdate refetch={refetch} cls={cls} modalId={`modal_${cls._id}`}></MyClassUpdate>
                             <button
                                 onClick={() => handleDelete(cls._id)}
                                 className="bg-red-500 text-white flex items-center gap-2 rounded-md px-2">

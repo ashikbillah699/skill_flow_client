@@ -6,7 +6,7 @@ import Swal from 'sweetalert2'
 import toast from "react-hot-toast";
 
 
-const MyClassUpdate = ({ cls, refetch }) => {
+const MyClassUpdate = ({ cls, refetch, modalId }) => {
     const { title, name, email, price, description, image, _id } = cls;
 
     const axiosSecure = useAxiosSecure();
@@ -25,7 +25,7 @@ const MyClassUpdate = ({ cls, refetch }) => {
         try {
             const { data } = await axiosSecure.put(`/classUpdate/${_id}`, fromData);
             if (data.matchedCount > 0) {
-                document.getElementById("my_modal_1").close()
+                document.getElementById(modalId).close()
                 Swal.fire({
                     title: "Updated",
                     icon: "success",
@@ -42,7 +42,7 @@ const MyClassUpdate = ({ cls, refetch }) => {
     };
 
     return (
-        <dialog id="my_modal_1" className="modal">
+        <dialog id={modalId} className="modal">
             <div className="modal-box  max-w-2xl mx-auto">
                 <div className="flex justify-center items-center min-h-screen p-4">
                     <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-lg w-full max-w-2xl">
