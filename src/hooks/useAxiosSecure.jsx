@@ -30,7 +30,7 @@ const useAxiosSecure = () => {
         if(status === 401 || status === 403){
             useEffect(() => {
                 logOut();
-                navigate('/login', { replace: true }); // রিডাইরেক্ট
+                navigate('/login', { replace: true }); 
             }, [logOut, navigate]);
         }
         return Promise.reject(error);

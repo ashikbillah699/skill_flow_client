@@ -14,8 +14,8 @@ const MyClassDetails = () => {
     const axiosSecure = useAxiosSecure();
     const [modalOpen, setModalOpen] = useState(false);
     const [allClass] = useAllClass()
-    const countEnroll = allClass.find(singleClass => singleClass._id === id)?.countEnroll || 'Class Not Found';
-    const submitCount =  allClass.find(singleClass => singleClass._id === id)?.submitCount || 'Class Not Found';
+    const countEnroll = allClass.find(singleClass => singleClass._id === id)?.countEnroll || '0';
+    const submitCount =  allClass.find(singleClass => singleClass._id === id)?.submitCount || '0';
 
     const handleSubmit = async(e) =>{
         e.preventDefault();
@@ -50,8 +50,6 @@ const MyClassDetails = () => {
             return res.data
         }
     });
-
-    // Sample data (you can replace these with actual data from your database)
    
 
     return (
