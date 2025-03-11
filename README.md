@@ -4,6 +4,10 @@ Skillflow is a platform where users can take various social and training courses
 
 ### 🔗 Live Site: https://skillfolw.web.app/
 
+### **Admin Login (For Check)**
+- **Email**: rafi@gmail.com
+- **Password**: Rrrrrr1
+
 ### 📂 Repository Link
 - **Client:** https://github.com/ashikbillah699/skill_flow_client
 - **Server:** https://github.com/ashikbillah699/skill_flow_server
