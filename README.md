@@ -1,8 +1,29 @@
-# React + Vite
+# Skillflow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Skillflow is a platform where users can take various social and training courses for their development.
 
-Currently, two official plugins are available:
+### 🔗 Live Site: https://skillfolw.web.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 📂 Repository Link
+- **Client:** https://github.com/ashikbillah699/skill_flow_client
+- **Server:** https://github.com/ashikbillah699/skill_flow_server
+
+### 🚀 Technical Usage
+#### **Frontend:**
+- React.js
+- Tailwind CSS
+- DaisyUI
+- React Router
+- Firebase Authentication
+
+#### **Backend:**
+- Node.js
+- Express.js
+- MongoDB
+- JWT Authentication
+
+### ✨ Main Features
+- 🔹 Users can login/sign up (Firebase Authentication)
+- 🔹 News browsing and detailed information can be viewed
+- 🔹 User User
+- 🔹 Book Data Storage (JWT Authentication)
