@@ -29,6 +29,5 @@ Skillflow is a platform where users can take various social and training courses
 - 🔹Progress Tracking: Users can track their progress and continue learning at their own pace.
 - 🔹Certificate of Completion: Earn a certificate upon successful course completion.
 - 🔹User Feedback & Ratings: Users can rate and review courses based on their experience.
-- 🔹Multi-language Support: Available in multiple languages for a global audience.
 - 🔹Mobile Friendly: Optimized for mobile devices for learning on the go.
 - 🔹Instructor Dashboard: Allows instructors to manage and upload new courses.
