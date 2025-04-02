@@ -38,7 +38,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <div className='flex items-center'>
+                <div className='flex items-center animate__animated animate__fadeInDown'>
                     <img src={skill_flow_logo} className='w-16 h-16' alt="" />
                     <a className=" text-xl font-semibold text-gray-100"> SKILLFLOW</a>
                 </div>
@@ -49,7 +49,7 @@ const Navbar = () => {
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end animate__animated animate__fadeInDown">
                 {user && user ? <>
                     <div className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">

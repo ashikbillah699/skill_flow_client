@@ -23,10 +23,10 @@ const AboutUs = () => {
 
                 {/* Right Side: Content */}
                 <div className="space-y-6">
-                    <h4 className="text-xl font-semibold border-b inline pr-5 border-black text-green-500 uppercase">
+                    <h4 className="animate__animated animate__fadeInDown text-xl font-semibold border-b inline pr-5 border-black text-green-500 uppercase">
                         Know About Us
                     </h4>
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
+                    <h2 className="animate__animated animate__fadeInDown text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
                         Unlocking the{" "}
                         <span className="text-[#F36B27]">Power</span> of Knowledge
                     </h2>
