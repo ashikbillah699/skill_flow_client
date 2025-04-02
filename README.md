@@ -1,8 +1,37 @@
-# React + Vite
+# Skillflow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Skillflow is a platform where users can take various social and training courses for their development.
 
-Currently, two official plugins are available:
+### 🔗 Live Site: https://skillfolw.web.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### **Admin Login (For Check)**
+- **Email**: rafi@gmail.com
+- **Password**: Rrrrrr1
+
+### 📂 Repository Link
+- **Client:** https://github.com/ashikbillah699/skill_flow_client
+- **Server:** https://github.com/ashikbillah699/skill_flow_server
+
+### 🚀 Technical Usage
+#### **Frontend:**
+- React.js
+- Tailwind CSS
+- DaisyUI
+- React Router
+- Firebase Authentication
+
+#### **Backend:**
+- Node.js
+- Express.js
+- MongoDB
+- JWT Authentication
+
+### ✨ Main Features
+- 🔹User Registration & Login: Users can create accounts and log in to access the courses.
+- 🔹Course Catalog: A wide range of courses available for users to explore.
+- 🔹Interactive Learning: Includes quizzes, assignments, and hands-on projects for better learning.
+- 🔹Progress Tracking: Users can track their progress and continue learning at their own pace.
+- 🔹Certificate of Completion: Earn a certificate upon successful course completion.
+- 🔹User Feedback & Ratings: Users can rate and review courses based on their experience.
+- 🔹Mobile Friendly: Optimized for mobile devices for learning on the go.
+- 🔹Instructor Dashboard: Allows instructors to manage and upload new courses.
