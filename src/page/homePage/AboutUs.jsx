@@ -15,7 +15,7 @@ const AboutUs = () => {
                     <div className="absolute -bottom-4 left-6 bg-white shadow-lg rounded-lg px-6 py-4 flex items-center space-x-4">
                         <FaUserFriends className="text-3xl text-red-500" />
                         <div>
-                            <h3 className="text-xl font-bold">2k+</h3>
+                            <h3 className="text-xl font-bold text-black">2k+</h3>
                             <p className="text-gray-600">Full Time Student</p>
                         </div>
                     </div>
@@ -26,7 +26,7 @@ const AboutUs = () => {
                     <h4 className="animate__animated animate__fadeInDown text-xl font-semibold border-b inline pr-5 border-black text-green-500 uppercase">
                         Know About Us
                     </h4>
-                    <h2 className="animate__animated animate__fadeInDown text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
+                    <h2 className="animate__animated animate__fadeInDown text-3xl md:text-5xl font-bold text-gray-800 leading-tight">
                         Unlocking the{" "}
                         <span className="text-[#F36B27]">Power</span> of Knowledge
                     </h2>
@@ -41,7 +41,7 @@ const AboutUs = () => {
                                 ✓
                             </div>
                             <div>
-                                <h4 className="text-lg font-semibold">
+                                <h4 className="text-lg font-semibold text-black">
                                     Ignite your passion for learning
                                 </h4>
                                 <p className="text-gray-600">
@@ -55,7 +55,7 @@ const AboutUs = () => {
                                 ✓
                             </div>
                             <div>
-                                <h4 className="text-lg font-semibold">
+                                <h4 className="text-lg font-semibold text-black">
                                     Discover the joy of lifelong learning
                                 </h4>
                                 <p className="text-gray-600">

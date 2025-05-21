@@ -25,11 +25,11 @@ const ClassCart = ({ classItem }) => {
                     </div>
                     <p className="text-sm text-gray-500">{classItem?.name}</p>
                 </div>
-                <h2 className="text-lg font-semibold">{classItem?.title}</h2>
+                <h2 className="text-lg font-semibold text-black">{classItem?.title}</h2>
                 <p className="text-sm text-gray-500">{classItem?.description.slice(0, 50)}...</p>
 
                 <div className="flex justify-between items-center">
-                    <Link to={`/classDetails/${classItem?._id}`}><button className="btn-sm mt-2 gap-3 flex justify-between items-center">Enroll Now<FaArrowRightLong /></button></Link>
+                    <Link to={`/classDetails/${classItem?._id}`}><button className="btn-sm mt-2 gap-3 flex justify-between items-center text-black">Enroll Now<FaArrowRightLong /></button></Link>
                     <p className="text-lg font-bold text-[#F36B27]">Price: {classItem?.price}</p>
                 </div>
             </div>

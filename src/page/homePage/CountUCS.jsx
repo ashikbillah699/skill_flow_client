@@ -39,20 +39,20 @@ const CountUCS = () => {
         <div className="max-w-screen-xl mx-auto py-10">
             {/* {teachOn.length} */}
             <CommonHead heading={'Our Progress'}></CommonHead>
-            <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-12 items-center">
                
-                <div className="grid gap-6">
+                <div className="grid gap-8 md:gap-5 lg:gap-8">
                     {stats.map((stat) => (
                         <div
                             key={stat.id}
-                            className={`flex justify-between bg-gradient-to-r ${stat.color} text-white p-4 rounded-xl shadow-md`}
+                            className={`flex justify-between items-center bg-gradient-to-r ${stat.color} text-white px-4 py-8 md:py-5 lg:py-8 rounded-xl shadow-md`}
                         >
                             <img
                                 src={stat.icon}
                                 alt={stat.title}
-                                className=" mb-4 w-12 h-12"
+                                className="w-12 h-12"
                             />
-                            <h3 className="text-lg font-medium">{stat.title}</h3>
+                            <h3 className="text-2xl font-medium">{stat.title}</h3>
                             <p className="text-4xl font-bold">{stat.count}</p>
                         </div>
                     ))}

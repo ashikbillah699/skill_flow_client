@@ -16,11 +16,11 @@ const Feedback = () => {
         queryKey: ['feddbacks'],
         queryFn: async () =>{
             const res = await axiosPublic.get('/feedback');
-            console.log(res.data);
+            // console.log(res.data);
             return res.data
         }
     })
-    console.log(feedbacks);
+    // console.log(feedbacks);
 
     return (
         <div className='mb-20 mt-10'>
@@ -29,8 +29,8 @@ const Feedback = () => {
 
                 {
                     feedbacks.map(review => <SwiperSlide
-                        key={review._id}
-                        className='text-center px-40 space-y-4'
+                        key={review?._id}
+                        className='text-center px-40 space-y-4 flex flex-row'
                     >
                         <Rating
                             style={{ maxWidth: 150 }}
@@ -40,7 +40,7 @@ const Feedback = () => {
                         />
                         <img className='mx-auto h-20 w-20 rounded-full' src={review.photoURL} alt="" />
                         <h3 className="text-xl uppercase font-mediam text-[#F36B27]">{review.name}</h3>
-                        <p className='text-sm'>{review.description}</p>
+                        <p className='text-sm text-gray-600'>{review.description}</p>
 
                     </SwiperSlide>)
                 }

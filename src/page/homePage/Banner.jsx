@@ -16,10 +16,10 @@ const Banner = () => {
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                 <SwiperSlide className="relative">
                     <img className="w-full h-[650px] object-cover" src={banner2} alt="" />
-                    <div className="absolute inset-0 bg-black/80"></div>
+                    <div className="absolute inset-0 bg-black/60"></div>
                     <div className="absolute w-full inset-y-0 text-center flex flex-col justify-center text-white">
-                        <h2 className="text-5xl font-bold mb-4 animate__animated animate__fadeInDown">Learn with <span className='text-[#F36B27]'>Ease</span></h2>
-                        <p className="mx-auto sm:w-5/6 md:w-4/6 text-lg mb-3">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-4 animate__animated animate__fadeInDown">Learn with <span className='text-[#F36B27]'>Ease</span></h2>
+                        <p className="mx-auto w-5/6 md:w-4/6 text-lg mb-3">
                         SkillFlow empowers you with simplified learning methods, interactive tools, and career-focused courses, ensuring a seamless skill development experience.
                         </p>
                         <a className="mx-auto px-3 py-2 w-max gap-3 flex items-center rounded-lg bg-gray-800 text-white hover:bg-[#F36B27] duration-700">Lorn more <FaCaretRight /></a>
@@ -27,10 +27,10 @@ const Banner = () => {
                 </SwiperSlide>
                 <SwiperSlide className="relative">
                     <img className="w-full h-[650px] object-cover" src={banner3} alt="" />
-                    <div className="absolute inset-0 bg-black/80"></div>
+                    <div className="absolute inset-0 bg-black/60"></div>
                     <div className="absolute w-full inset-y-0 text-center flex flex-col justify-center text-white">
-                        <h2 className="text-5xl font-bold mb-4 animate__animated animate__fadeInDown">Empower Your<span className='text-[#F36B27]'>Skills</span></h2>
-                        <p className="mx-auto sm:w-5/6 md:w-4/6 text-lg mb-3">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-4 animate__animated animate__fadeInDown">Empower Your<span className='text-[#F36B27]'>Skills</span></h2>
+                        <p className="mx-auto w-5/6 md:w-4/6 text-lg mb-3">
                         Unlock your true potential with SkillFlow's cutting-edge courses, expert guidance, and personalized learning paths designed for success.
                         </p>
                         <a className="mx-auto px-3 py-2 w-max gap-3 flex items-center rounded-lg bg-gray-800 text-white hover:bg-[#F36B27] duration-700">Lorn more <FaCaretRight /></a>
@@ -38,10 +38,10 @@ const Banner = () => {
                 </SwiperSlide>
                 <SwiperSlide className="relative">
                     <img className="w-full h-[650px] object-cover" src={banner4} alt="" />
-                    <div className="absolute inset-0 bg-black/80"></div>
+                    <div className="absolute inset-0 bg-black/60"></div>
                     <div className="absolute w-full inset-y-0 text-center flex flex-col justify-center text-white">
-                        <h2 className="text-5xl font-bold mb-4 animate__animated animate__fadeInDown">Master New <span className='text-[#F36B27]'>Talents</span></h2>
-                        <p className="mx-auto sm:w-5/6 md:w-4/6 text-lg mb-3">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-4 animate__animated animate__fadeInDown">Master New <span className='text-[#F36B27]'>Talents</span></h2>
+                        <p className="mx-auto w-5/6 md:w-4/6 text-lg mb-3">
                         Step into the future of learning with SkillFlow’s innovative platform, where mastering talents becomes engaging, efficient, and rewarding.
                         </p>
                         <a className="mx-auto px-3 py-2 w-max gap-3 flex items-center rounded-lg bg-gray-800 text-white hover:bg-[#F36B27] duration-700">Lorn more <FaCaretRight /></a>
@@ -49,10 +49,10 @@ const Banner = () => {
                 </SwiperSlide>
                 <SwiperSlide className="relative">
                     <img className="w-full h-[650px] object-cover" src={banner5} alt="" />
-                    <div className="absolute inset-0 bg-black/80"></div>
+                    <div className="absolute inset-0 bg-black/60"></div>
                     <div className="absolute w-full inset-y-0 text-center flex flex-col justify-center text-white">
-                        <h2 className="text-5xl font-bold mb-4 animate__animated animate__fadeInDown">Build Your <span className='text-[#F36B27]'>Future</span></h2>
-                        <p className="mx-auto sm:w-5/6 md:w-4/6 text-lg mb-3">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-4 animate__animated animate__fadeInDown">Build Your <span className='text-[#F36B27]'>Future</span></h2>
+                        <p className="mx-auto w-5/6 md:w-4/6 text-lg mb-3">
                         SkillFlow offers advanced resources and expert-curated courses to help you excel in your goals and aspirations.
                         </p>
                         <a className="mx-auto px-3 py-2 w-max gap-3 flex items-center rounded-lg bg-gray-800 text-white hover:bg-[#F36B27] duration-700">Lorn more <FaCaretRight /></a>
@@ -60,10 +60,10 @@ const Banner = () => {
                 </SwiperSlide>
                 <SwiperSlide className="relative">
                     <img className="w-full h-[650px] object-cover" src={banner6} alt="" />
-                    <div className="absolute inset-0 bg-black/80"></div>
+                    <div className="absolute inset-0 bg-black/60"></div>
                     <div className="absolute w-full inset-y-0 text-center flex flex-col justify-center text-white">
-                        <h2 className="text-5xl font-bold mb-4 animate__animated animate__fadeInDown">Start Your <span className='text-[#F36B27]'>Journey</span></h2>
-                        <p className="mx-auto sm:w-5/6 md:w-4/6 text-lg mb-3">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-4 animate__animated animate__fadeInDown">Start Your <span className='text-[#F36B27]'>Journey</span></h2>
+                        <p className="mx-auto w-5/6 md:w-4/6 text-lg mb-3">
                         Begin your journey to excellence with SkillFlow’s dynamic learning platform, designed to make success attainable.
                         </p>
                         <a className="mx-auto px-3 py-2 w-max gap-3 flex items-center rounded-lg bg-gray-800 text-white hover:bg-[#F36B27] duration-700">Lorn more <FaCaretRight /></a>

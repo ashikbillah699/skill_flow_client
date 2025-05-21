@@ -1,6 +1,5 @@
 import { Link, NavLink } from 'react-router-dom';
 import skill_flow_logo from '../assets/SkillFolw_logo.png'
-import './navbar.css'
 import { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 
@@ -15,7 +14,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar bg-black justify-evenly max-w-screen-2xl mx-auto pt-0 fixed z-10 bg-opacity-45 top-0">
+        <div className="navbar bg-black justify-evenly w-full mx-auto pt-0 fixed z-20 bg-opacity-45 top-0">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost text-white lg:hidden">
@@ -34,7 +33,7 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content space-y-3 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content space-y-3 rounded-box z-[1] mt-3 w-52 p-2 bg-gray-800">
                         {links}
                     </ul>
                 </div>
@@ -61,7 +60,7 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content bg-white rounded-box z-[1] mt-3 w-52 p-2 shadow text-black">
                             <li><a>{user && user?.displayName}</a></li>
                             <li><NavLink to='/deshboard'> Deshboard</NavLink></li>
                             <li><a onClick={logOut}>Logout</a></li>

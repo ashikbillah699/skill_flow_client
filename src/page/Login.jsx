@@ -85,7 +85,7 @@ const Login = () => {
 
                 {/* Right Side - Form */}
                 <div className="w-full md:w-1/2 p-8">
-                    <h2 className="text-2xl font-bold text-center mb-8">Login</h2>
+                    <h2 className="text-2xl font-bold text-center mb-8 text-black">Login</h2>
 
                     {/* Login Form */}
                     <form className="space-y-4" onSubmit={handleSubmit}>
@@ -97,7 +97,7 @@ const Login = () => {
                                 name="email"
                                 type="email"
                                 placeholder="Type here"
-                                className="input input-bordered w-full"
+                                className="input input-bordered w-full text-black"
                                 required
                                 style={{ fontFamily: "Open Sans, sans-serif" }}
                             />
@@ -113,7 +113,7 @@ const Login = () => {
                                 type="password"
                                 autoComplete="current-password"
                                 placeholder="Enter your password"
-                                className="input input-bordered w-full"
+                                className="input input-bordered w-full text-black"
                                 required
                                 style={{ fontFamily: "Open Sans, sans-serif" }}
                             />
@@ -128,7 +128,7 @@ const Login = () => {
                     </form>
 
                     {/* New Account */}
-                    <p className="text-center text-sm mt-4">
+                    <p className="text-center text-sm mt-4 text-gray-600">
                         New here?{" "}
                         <Link
                             to="/signUp"
@@ -139,16 +139,16 @@ const Login = () => {
                     </p>
 
                     {/* Social Login */}
-                    <p className="text-center text-sm mt-4">Or sign in with</p>
+                    <p className="text-center text-sm mt-4 text-gray-600">Or sign in with</p>
                     <div className="flex justify-center gap-4 mt-2">
                         <button className="btn btn-circle btn-outline">
-                            <FaFacebookF className="text-xl" />
+                            <FaFacebookF className="text-xl text-black" />
                         </button>
                         <button onClick={handleGoogle} className="btn btn-circle btn-outline">
-                            <FaGoogle className="text-xl" />
+                            <FaGoogle className="text-xl text-black" />
                         </button>
                         <button className="btn btn-circle btn-outline">
-                            <FaGithub className="text-xl" />
+                            <FaGithub className="text-xl text-black" />
                         </button>
                     </div>
                 </div>

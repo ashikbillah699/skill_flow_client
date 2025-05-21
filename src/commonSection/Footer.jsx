@@ -2,7 +2,7 @@
 const Footer = () => {
     return (
         <div>
-            <div className="mt-20">
+            <div className="">
                 <footer className="grid grid-cols-2 justify-center items-center  text-center  text-white mx-auto">
                     <div className="col-span-1 bg-[#1F2937] py-24">
                        <a className="footer-title font-bold ">Contact Us</a>
