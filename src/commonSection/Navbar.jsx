@@ -67,7 +67,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                 </>
-                    : <Link to='/login' className="px-3 py-2 rounded-lg bg-gray-800 text-white hover:bg-[#F36B27] duration-700">Sign In</Link>
+                    : <Link to='/login' className="px-3 py-2 rounded-lg  text-white hover:bg-gray-800 bg-[#F36B27] duration-700">Sign In</Link>
                 }
                 {/* profile */}
 

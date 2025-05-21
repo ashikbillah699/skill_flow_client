@@ -24,7 +24,7 @@ const StudyAids = () => {
     return (
         <div>
             <div className="max-w-screen-xl mx-auto p-4">
-               <CommonHead heading={'Study Aids to Boost Your Learning'}></CommonHead>
+               <CommonHead heading={'Learn Boost'}></CommonHead>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mt-10">
                     {studyAids.map((aid) => (
                         <div

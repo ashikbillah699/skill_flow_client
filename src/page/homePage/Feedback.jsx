@@ -23,7 +23,7 @@ const Feedback = () => {
     // console.log(feedbacks);
 
     return (
-        <div className='mb-20 mt-10'>
+        <div className='md:5 md:mb-20 mt-10'>
             <CommonHead heading={'FEEDBACK'}></CommonHead>
             <Swiper navigation={true} modules={[Navigation]} className="max-w-screen-xl mx-auto">
 

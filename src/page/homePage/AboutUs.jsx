@@ -65,7 +65,7 @@ const AboutUs = () => {
                             </div>
                         </div>
                     </div>
-                    <button className="mx-auto px-3 py-2 w-max gap-3 rounded-lg bg-gray-800 text-white hover:bg-[#F36B27] duration-700">Read More</button>
+                    <button className="mx-auto px-3 py-2 w-max gap-3 rounded-lg  text-white hover:bg-gray-800 bg-[#F36B27] duration-700">Read More</button>
                 </div>
             </div>
         </div>

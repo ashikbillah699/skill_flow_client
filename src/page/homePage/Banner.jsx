@@ -22,7 +22,7 @@ const Banner = () => {
                         <p className="mx-auto w-5/6 md:w-4/6 text-lg mb-3">
                         SkillFlow empowers you with simplified learning methods, interactive tools, and career-focused courses, ensuring a seamless skill development experience.
                         </p>
-                        <a className="mx-auto px-3 py-2 w-max gap-3 flex items-center rounded-lg bg-gray-800 text-white hover:bg-[#F36B27] duration-700">Lorn more <FaCaretRight /></a>
+                        <a className="mx-auto px-3 py-2 w-max gap-3 flex items-center rounded-lg bg-[#F36B27] text-white hover:bg-gray-800 duration-700">Lorn more <FaCaretRight /></a>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide className="relative">
@@ -33,7 +33,7 @@ const Banner = () => {
                         <p className="mx-auto w-5/6 md:w-4/6 text-lg mb-3">
                         Unlock your true potential with SkillFlow's cutting-edge courses, expert guidance, and personalized learning paths designed for success.
                         </p>
-                        <a className="mx-auto px-3 py-2 w-max gap-3 flex items-center rounded-lg bg-gray-800 text-white hover:bg-[#F36B27] duration-700">Lorn more <FaCaretRight /></a>
+                        <a className="mx-auto px-3 py-2 w-max gap-3 flex items-center rounded-lg bg-[#F36B27] text-white hover:bg-gray-800 duration-700">Lorn more <FaCaretRight /></a>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide className="relative">
@@ -44,7 +44,7 @@ const Banner = () => {
                         <p className="mx-auto w-5/6 md:w-4/6 text-lg mb-3">
                         Step into the future of learning with SkillFlow’s innovative platform, where mastering talents becomes engaging, efficient, and rewarding.
                         </p>
-                        <a className="mx-auto px-3 py-2 w-max gap-3 flex items-center rounded-lg bg-gray-800 text-white hover:bg-[#F36B27] duration-700">Lorn more <FaCaretRight /></a>
+                        <a className="mx-auto px-3 py-2 w-max gap-3 flex items-center rounded-lg bg-[#F36B27] text-white hover:bg-gray-800 duration-700">Lorn more <FaCaretRight /></a>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide className="relative">
@@ -55,7 +55,7 @@ const Banner = () => {
                         <p className="mx-auto w-5/6 md:w-4/6 text-lg mb-3">
                         SkillFlow offers advanced resources and expert-curated courses to help you excel in your goals and aspirations.
                         </p>
-                        <a className="mx-auto px-3 py-2 w-max gap-3 flex items-center rounded-lg bg-gray-800 text-white hover:bg-[#F36B27] duration-700">Lorn more <FaCaretRight /></a>
+                        <a className="mx-auto px-3 py-2 w-max gap-3 flex items-center rounded-lg bg-[#F36B27] text-white hover:bg-gray-800 duration-700">Lorn more <FaCaretRight /></a>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide className="relative">
@@ -66,7 +66,7 @@ const Banner = () => {
                         <p className="mx-auto w-5/6 md:w-4/6 text-lg mb-3">
                         Begin your journey to excellence with SkillFlow’s dynamic learning platform, designed to make success attainable.
                         </p>
-                        <a className="mx-auto px-3 py-2 w-max gap-3 flex items-center rounded-lg bg-gray-800 text-white hover:bg-[#F36B27] duration-700">Lorn more <FaCaretRight /></a>
+                        <a className="mx-auto px-3 py-2 w-max gap-3 flex items-center rounded-lg bg-[#F36B27] text-white hover:bg-gray-800 duration-700">Lorn more <FaCaretRight /></a>
                     </div>
                 </SwiperSlide>
             </Swiper>
